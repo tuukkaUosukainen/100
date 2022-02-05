@@ -16,6 +16,8 @@
     "verbose": true
   },
   "devDependencies": {
-    "jest": "^27.4.7"
-  }
+    "jest": "^27.4.7",
+    "cypress": "^9.4.1"
+  },
+  "dependencies": {}
 }
