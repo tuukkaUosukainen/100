@@ -6,6 +6,7 @@ describe('Sanity test', () => {
 
 describe('Todo UI', () => {
   it('Renders correct page header', () => {
-    cy.visit('http://localhost:1234/')
+    cy.visit('http://localhost:1234/');
+    cy.contains('TODO');
   });
-})
+});
