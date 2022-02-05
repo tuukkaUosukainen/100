@@ -1,4 +1,4 @@
-const { removeById, addNewTodo } = require('../helpers');
+const { removeById, addNewTodo, renameTodo } = require('../helpers');
 
 describe('addNewTodo', () => {
   it('Adds a new todo to todo list', () => {
@@ -15,5 +15,15 @@ describe('removeById', () => {
     const finalArray = [{ id: 1 }];
     const result = removeById(initialArray, 2);
     expect(result).toEqual(finalArray);
+  });
+});
+
+describe('renameTodo', () => {
+  it('Renames existing todo', () => {
+    const initialTodo = { name: 'name' };
+    const newName = 'newName';
+    const finalTodo = { name: 'newName' };
+    const result = renameTodo(initialTodo, newName);
+    expect(result).toEqual(finalTodo);
   });
 });
