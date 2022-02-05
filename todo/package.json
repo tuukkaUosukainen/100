@@ -11,5 +11,11 @@
     "url": "https://github.com/tuukkaUosukainen/100/todo"
   },
   "author": "kapteeni",
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "verbose": true
+  },
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
 }
