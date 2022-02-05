@@ -4,7 +4,8 @@
   "description": "a simple todo app",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch-all"
+    "test": "jest --watch-all",
+    "cypress": "npx cypress open"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,9 @@
   "author": "kapteeni",
   "license": "ISC",
   "jest": {
+    "testPathIgnorePatterns" : [
+      "<rootDir>/cypress/"
+    ],
     "verbose": true
   },
   "devDependencies": {
