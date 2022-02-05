@@ -1,5 +1,5 @@
 # A Simple Todo App
-Practice project from: https://www.webtips.dev/100-javascript-project-ideas. Instead of React Native using browser. In this project I tried TDD for unit tests. It's fun but, I need practice my discipline and do one thing at a time. If the test are naive, forgive me :0
+Practice project from: https://www.webtips.dev/100-javascript-project-ideas. Instead of React Native using browser. In this project I tried TDD for unit tests. It's fun but, I need to practice my discipline and do one thing at a time. If the test are naive, forgive me :0
 
 ## It should:
 * Be able to add new elements to a list
