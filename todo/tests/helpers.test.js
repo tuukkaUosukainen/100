@@ -1,4 +1,4 @@
-const { removeById, addNewTodo, renameTodo } = require('../helpers');
+const { removeById, addNewTodo, renameTodo, findById } = require('../helpers');
 
 describe('addNewTodo', () => {
   it('Adds a new todo to todo list', () => {
@@ -25,5 +25,14 @@ describe('renameTodo', () => {
     const finalTodo = { name: 'newName' };
     const result = renameTodo(initialTodo, newName);
     expect(result).toEqual(finalTodo);
+  });
+});
+
+describe('findById', () => {
+  it('Finds a todo item from todo list', () => {
+    const todos = [{ id: 1 }, { id: 2 }];
+    const foundTodo = { id: 2 };
+    const result = findById(todos, 2);
+    expect(result).toEqual(foundTodo);
   });
 });

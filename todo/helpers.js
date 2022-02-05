@@ -13,8 +13,13 @@ function renameTodo(oldTodo, newTodo) {
   };
 }
 
+function findById(arr, searchId) {
+  return arr.find(todo => todo.id === searchId)
+}
+
 module.exports = {
   renameTodo,
   addNewTodo,
-  removeById
+  removeById,
+  findById
 };
