@@ -14,12 +14,20 @@ function renameTodo(oldTodo, newTodo) {
 }
 
 function findById(arr, searchId) {
-  return arr.find(todo => todo.id === searchId)
+  return arr.find(todo => todo.id === searchId);
+}
+
+function getSumOf(arr, key) {
+  return [
+    arr.filter(todo => todo[key]).length,
+    arr.filter(todo => !todo[key]).length
+  ];
 }
 
 module.exports = {
   renameTodo,
   addNewTodo,
   removeById,
-  findById
+  findById,
+  getSumOf
 };
