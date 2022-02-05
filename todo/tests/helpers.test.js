@@ -10,7 +10,7 @@ describe('addNewTodo', () => {
 });
 
 describe('removeById', () => {
-  it('Removes element form an array', () => {
+  it('Removes todo from todo list', () => {
     const initialArray = [{ id: 1 }, { id: 2 }];
     const finalArray = [{ id: 1 }];
     const result = removeById(initialArray, 2);
