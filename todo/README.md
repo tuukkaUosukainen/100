@@ -1,5 +1,6 @@
 # A Simple Todo App
 Practice project from: https://www.webtips.dev/100-javascript-project-ideas. Instead of React Native using browser.
+
 ## It should:
 * Be able to add new elements to a list
 * Be able to remove existing elements from a list
@@ -12,3 +13,14 @@ Practice project from: https://www.webtips.dev/100-javascript-project-ideas. Ins
 * Show a list of completed todos
 * Show a checkbox for each todo to toggle complete
 * Show a form for adding new todos
+
+## To run the program
+* Clone the project
+* npm install
+* npm start
+
+## To run unit tests
+* npm run test
+
+## To run E2E tests
+* npm run cypress

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --watch-all",
     "cypress": "npx cypress open",
-    "parcel": "parcel index.html"
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
