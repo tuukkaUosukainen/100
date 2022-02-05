@@ -11,3 +11,4 @@ Practice project from: https://www.webtips.dev/100-javascript-project-ideas. Ins
 * Show a list of incomplete todos
 * Show a list of completed todos
 * Show a checkbox for each todo to toggle complete
+* Show a form for adding new todos
