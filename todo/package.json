@@ -4,7 +4,7 @@
   "description": "a simple todo app",
   "main": "index.js",
   "scripts": {
-    "test": "test --watch-all"
+    "test": "jest --watch-all"
   },
   "repository": {
     "type": "git",
