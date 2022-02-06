@@ -21,10 +21,11 @@
     "verbose": true
   },
   "devDependencies": {
-    "jest": "^27.4.7",
-    "cypress": "^9.4.1"
+    "cypress": "^9.4.1",
+    "jest": "^27.4.7"
   },
   "dependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.5.1"
   }
 }
