@@ -1,4 +1,4 @@
-const { removeById, getSumOf } = require('./helpers');
+const { removeById, getSumOf, addNewTodo } = require('./helpers');
 
 let todos = [
   { id: 1, name: 'todoName', completed: false },
@@ -13,14 +13,13 @@ let todos = [
 const addTodoBtn = document.getElementById('add-todo-btn');
 const root = document.getElementById('root');
 
-
 addTodoBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const newTodoName = document.getElementById('todo-input');
   const newTodo = {
     id: new Date().getTime(), name: newTodoName.value, completed: false
   };
-  todos = [...todos, newTodo];
+  todos = addNewTodo(todos, newTodo);
   const todoElements = document.getElementsByTagName('li');
   const header = document.getElementById('header');
   const date = document.getElementById('date');

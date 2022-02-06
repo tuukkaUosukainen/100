@@ -32,5 +32,6 @@ describe('Todo UI', () => {
     cy.get('#add-todo-btn').click();
     cy.get('ul').find('li').should('have.length', 7);
     cy.contains('Name: test todo completed: false')
+    cy.contains('Completed: 0 Incomplete: 7');
   })
 });
