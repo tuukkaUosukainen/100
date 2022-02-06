@@ -64,7 +64,6 @@ function render() {
 
   // render todolist
   for (let i = 0; i < todos.length; i++) {
-    console.log('todos', todos);
     const li = newElement('li');
 
     // Edit functionality
