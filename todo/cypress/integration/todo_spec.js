@@ -11,14 +11,14 @@ describe('Todo UI', () => {
   });
 
 
-  it('Renders 2 placeholder todos correctly', () => {
-    cy.contains('Completed: 0 Incomplete: 2');
-    cy.get('ul').find('li').should('have.length', 2);
+  it('Renders 6 placeholder todos correctly', () => {
+    cy.contains('Completed: 0 Incomplete: 6');
+    cy.get('ul').find('li').should('have.length', 6);
   });
 
   it('Deletes a todo on delete click', () => {
     cy.get('#deleteButton_todoName').click();
-    cy.contains('Completed: 0 Incomplete: 1');
-    cy.get('ul').find('li').should('have.length', 1);
+    cy.contains('Completed: 0 Incomplete: 5');
+    cy.get('ul').find('li').should('have.length', 5);
   });
 });
