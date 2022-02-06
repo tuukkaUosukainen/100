@@ -26,9 +26,16 @@ img {
 /* STYLES */
 
 body {
-    padding: 0 10px;
+    padding: 10px;
     font-family: monospace;
 }
 
+h1, input {
+    margin-bottom: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
 
 

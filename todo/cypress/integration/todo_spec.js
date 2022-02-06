@@ -24,14 +24,15 @@ describe('Todo UI', () => {
 
   it('Marks todo complete', () => {
     cy.get('#editButton_todoFiveName').click();
-    cy.contains('Name: todoFiveName completed: true');
+    cy.get('#5todoFiveName').should('have.class', 'completed');
+    cy.contains('Completed: 1 Incomplete: 5');
   });
 
   it('Adds a new todo item', () => {
     cy.get('#todo-input').type('test todo');
     cy.get('#add-todo-btn').click();
     cy.get('ul').find('li').should('have.length', 7);
-    cy.contains('Name: test todo completed: false')
+    cy.contains('test todo')
     cy.contains('Completed: 0 Incomplete: 7');
   })
 });

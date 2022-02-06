@@ -21,12 +21,10 @@ addTodoBtn.addEventListener('click', (e) => {
   };
   todos = addNewTodo(todos, newTodo);
   const todoElements = document.getElementsByTagName('li');
-  const header = document.getElementById('header');
   const date = document.getElementById('date');
   const completedData = document.getElementById('completed-data');
   const hr = document.getElementById('hr');
 
-  header.remove();
   date.remove();
   completedData.remove();
   hr.remove();
@@ -37,8 +35,6 @@ addTodoBtn.addEventListener('click', (e) => {
 
 function render() {
   // Create new DOM elements
-  const header = newElement('h1');
-  header.id = 'header';
   const dateParagraph = newElement('p');
   dateParagraph.id = 'date';
   const todoDataParagraph = newElement('p');
@@ -48,14 +44,12 @@ function render() {
   const ul = newElement('ul');
 
   // Add element content
-  header.textContent = 'TODO';
   dateParagraph.textContent = new Date().toLocaleString();
 
   const [sumOfCompleted, sumOfNotCompleted] = getSumOf(todos, 'completed');
   todoDataParagraph.textContent = `Completed: ${sumOfCompleted} Incomplete: ${sumOfNotCompleted}`;
 
   // Render elements to page
-  root.appendChild(header);
   root.appendChild(dateParagraph);
   root.appendChild(ul);
   dateParagraph.appendChild(todoDataParagraph);
@@ -82,14 +76,14 @@ function render() {
       todos = editedTodos;
 
       // clear dom and re-render
-      clearDOM(header, dateParagraph, todoDataParagraph, ul);
+      clearDOM(dateParagraph, todoDataParagraph, ul);
       render();
     });
 
     // Delete functionality
     const deleteButton = newElement('button');
     deleteButton.id = 'deleteButton_' + todos[i].name;
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = 'X';
 
     // on delete click
     deleteButton.addEventListener('click', () => {
@@ -98,23 +92,23 @@ function render() {
       todos = newTodos;
 
       // clear dom and re-render
-      clearDOM(header, dateParagraph, todoDataParagraph, ul);
+      clearDOM(dateParagraph, todoDataParagraph, ul);
       render();
     });
 
     // render todolist item
     ul.appendChild(li);
     li.id = todos[i].id + todos[i].name;
-    li.textContent = 'Name: ' + todos[i].name + ' completed: ' + todos[i].completed;
-    li.append(deleteButton);
+    if (todos[i].completed) li.classList.add('completed');
+    li.textContent = todos[i].name;
     li.append(editButton);
+    li.append(deleteButton);
   }
 };
 
 render();
 
-function clearDOM(heading, dateParagraph, todoDataParagraph, ul) {
-  heading.remove();
+function clearDOM(dateParagraph, todoDataParagraph, ul) {
   dateParagraph.remove();
   todoDataParagraph.remove();
   ul.remove();
