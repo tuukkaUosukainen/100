@@ -62,7 +62,7 @@ function render() {
     // Edit functionality
     const editButton = newElement('button');
     editButton.id = 'editButton_' + todos[i].name;
-    editButton.textContent = todos[i].completed ? 'Open' : 'Done';
+    editButton.textContent = todos[i].completed ? 'Undo' : 'Done';
 
     // on edit click
     editButton.addEventListener('click', () => {

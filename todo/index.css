@@ -28,14 +28,33 @@ img {
 body {
     padding: 10px;
     font-family: monospace;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
 }
 
 h1, input {
     margin-bottom: 10px;
 }
 
+input {
+    padding: 6px;
+    border-radius: 0;
+    border: 1px solid black;
+}
+
 .completed {
     text-decoration: line-through;
+}
+
+button {
+    background-color: white;
+    border: 1px solid black;
+    padding: 6px;
+}
+
+li button {
+    margin: 6px;
 }
 
 
