@@ -1,4 +1,4 @@
-const { removeById, getSumOf, addNewTodo } = require('./helpers');
+const { removeById, getCompletedTodoData, addNewTodo } = require('./helpers');
 let todos = require('./data.json');
 
 const addTodoBtn = document.getElementById('add-todo-btn');
@@ -34,7 +34,7 @@ function render() {
   // Add element content
   dateParagraph.textContent = new Date().toLocaleString();
 
-  const [sumOfCompleted, sumOfNotCompleted] = getSumOf(todos, 'completed');
+  const [sumOfCompleted, sumOfNotCompleted] = getCompletedTodoData(todos);
   todoDataParagraph.textContent = `Completed: ${sumOfCompleted} Incomplete: ${sumOfNotCompleted}`;
 
   // Render elements to page
