@@ -1,14 +1,5 @@
 const { removeById, getSumOf, addNewTodo } = require('./helpers');
-
-let todos = [
-  { id: 1, name: 'todoName', completed: false },
-  { id: 2, name: 'todoTwoName', completed: false },
-  { id: 3, name: 'todoThreeName', completed: false },
-  { id: 4, name: 'todoFourName', completed: false },
-  { id: 5, name: 'todoFiveName', completed: false },
-  { id: 6, name: 'todoSixName', completed: false }
-
-];
+let todos = require('./data.json');
 
 const addTodoBtn = document.getElementById('add-todo-btn');
 const infoSection = document.getElementById('info-section');
