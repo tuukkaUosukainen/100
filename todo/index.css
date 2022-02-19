@@ -24,13 +24,12 @@ img {
 }
 
 /* STYLES */
-
 body {
     padding: 10px;
     font-family: monospace;
-    max-width: 600px;
+    max-width: 320px;
     width: 100%;
-    margin: auto;
+    margin: 40px auto;
 }
 
 h1, input {
@@ -43,6 +42,14 @@ input {
     border: 1px solid black;
 }
 
+section p {
+    padding: 6px 0;
+}
+
+#date {
+    font-size: 14px;
+}
+
 .completed {
     text-decoration: line-through;
 }
@@ -50,11 +57,20 @@ input {
 button {
     background-color: white;
     border: 1px solid black;
-    padding: 6px;
+    padding: 4px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    background-color: #f7fbfc;
 }
 
 li button {
-    margin: 6px;
+    margin: 10px;
 }
 
 

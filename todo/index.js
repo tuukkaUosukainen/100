@@ -33,18 +33,19 @@ function render() {
 
   // Add element content
   dateParagraph.textContent = new Date().toLocaleString();
-
   const [sumOfCompleted, sumOfNotCompleted] = getCompletedTodoData(todos);
   todoDataParagraph.textContent = `Completed: ${sumOfCompleted} Incomplete: ${sumOfNotCompleted}`;
 
   // Render elements to page
   infoSection.appendChild(dateParagraph);
+  infoSection.appendChild(todoDataParagraph);
   todoList.appendChild(ul);
-  dateParagraph.appendChild(todoDataParagraph);
 
   // render todolist
   for (let i = 0; i < todos.length; i++) {
     const li = newElement('li');
+    const todoButtons = newElement('div');
+    todoButtons.className = 'todo-buttons';
 
     // create edit button
     const editButton = newElement('button');
@@ -86,8 +87,9 @@ function render() {
     li.id = todos[i].id + todos[i].name;
     if (todos[i].completed) li.classList.add('completed');
     li.textContent = todos[i].name;
-    li.append(editButton);
-    li.append(deleteButton);
+    li.append(todoButtons);
+    todoButtons.append(editButton);
+    todoButtons.append(deleteButton);
   }
 }
 
