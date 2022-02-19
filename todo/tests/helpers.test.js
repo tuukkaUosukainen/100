@@ -1,4 +1,4 @@
-const { removeById, addNewTodo, renameTodo, findById, getSumOf } = require('../helpers');
+const { removeById, addNewTodo, getSumOf } = require('../helpers');
 
 describe('addNewTodo', () => {
   it('Adds a new todo to todo list', () => {

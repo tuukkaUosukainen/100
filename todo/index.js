@@ -11,7 +11,8 @@ let todos = [
 ];
 
 const addTodoBtn = document.getElementById('add-todo-btn');
-const root = document.getElementById('root');
+const infoSection = document.getElementById('info-section');
+const todoList = document.getElementById('todo-list');
 
 addTodoBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -23,11 +24,9 @@ addTodoBtn.addEventListener('click', (e) => {
   const todoElements = document.getElementsByTagName('li');
   const date = document.getElementById('date');
   const completedData = document.getElementById('completed-data');
-  const hr = document.getElementById('hr');
 
   date.remove();
   completedData.remove();
-  hr.remove();
   Array.from(todoElements).forEach(todo => todo.remove());
   newTodoName.value = '';
   render();
@@ -39,8 +38,6 @@ function render() {
   dateParagraph.id = 'date';
   const todoDataParagraph = newElement('p');
   todoDataParagraph.id = 'completed-data';
-  const hr = newElement('hr');
-  hr.id = 'hr';
   const ul = newElement('ul');
 
   // Add element content
@@ -50,10 +47,9 @@ function render() {
   todoDataParagraph.textContent = `Completed: ${sumOfCompleted} Incomplete: ${sumOfNotCompleted}`;
 
   // Render elements to page
-  root.appendChild(dateParagraph);
-  root.appendChild(ul);
+  infoSection.appendChild(dateParagraph);
+  todoList.appendChild(ul);
   dateParagraph.appendChild(todoDataParagraph);
-  dateParagraph.appendChild(hr);
 
   // render todolist
   for (let i = 0; i < todos.length; i++) {
@@ -67,13 +63,12 @@ function render() {
     // on edit click
     editButton.addEventListener('click', () => {
       // update todos
-      const editedTodos = todos.map(todo => {
+      todos = todos.map(todo => {
         if (todo.id === todos[i].id) {
           todo.completed = !todos[i].completed;
         }
         return todo;
       });
-      todos = editedTodos;
 
       // clear dom and re-render
       clearDOM(dateParagraph, todoDataParagraph, ul);
@@ -88,8 +83,7 @@ function render() {
     // on delete click
     deleteButton.addEventListener('click', () => {
       // update todos
-      const newTodos = removeById(todos, todos[i].id);
-      todos = newTodos;
+      todos = removeById(todos, todos[i].id);
 
       // clear dom and re-render
       clearDOM(dateParagraph, todoDataParagraph, ul);
@@ -104,7 +98,7 @@ function render() {
     li.append(editButton);
     li.append(deleteButton);
   }
-};
+}
 
 render();
 
