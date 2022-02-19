@@ -46,7 +46,7 @@ function render() {
   for (let i = 0; i < todos.length; i++) {
     const li = newElement('li');
 
-    // Edit functionality
+    // create edit button
     const editButton = newElement('button');
     editButton.id = 'editButton_' + todos[i].name;
     editButton.textContent = todos[i].completed ? 'Undo' : 'Done';
@@ -66,7 +66,7 @@ function render() {
       render();
     });
 
-    // Delete functionality
+    // create delete button
     const deleteButton = newElement('button');
     deleteButton.id = 'deleteButton_' + todos[i].name;
     deleteButton.textContent = 'X';
