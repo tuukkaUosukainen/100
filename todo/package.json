@@ -2,7 +2,6 @@
   "name": "todo",
   "version": "1.0.0",
   "description": "a simple todo app",
-  "main": "index.js",
   "scripts": {
     "test": "jest --watch-all",
     "cypress": "npx cypress open",
